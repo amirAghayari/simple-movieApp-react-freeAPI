@@ -1,0 +1,97 @@
+.container {
+  background-color: #dee2e6;
+  width: 1200px;
+  height: 630px;
+}
+
+.nameContainer {
+  position: relative;
+  width: 350px;
+  height: 150px;
+  pad: 10px 20px;
+  top: 42px;
+  right: 25px;
+  border-radius: 25px;
+  border: solid #00025e 2px;
+  justify-self: end;
+}
+
+.firstName {
+  font-size: 45px;
+  margin-top: 30px;
+  margin-left: 10px;
+  color: #464646;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.lastName {
+  position: relative;
+  bottom: 65px;
+  font-size: 55px;
+  font-family: serif;
+  color: #1864ab;
+  font-weight: bold;
+  margin-left: 90px;
+}
+
+.allContainer {
+  position: relative;
+  top: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+}
+
+.firstImg,
+.secondaryImg {
+  width: 300px;
+  border-radius: 25px;
+}
+
+.firstImg {
+  grid-column: 2;
+}
+
+.secondaryImg {
+  justify-self: end;
+}
+
+.contactDiv {
+  position: relative;
+  bottom: 10px;
+  right: 35px;
+  border-radius: 25px;
+  border: solid #00025e 2px;
+  width: 400px;
+  height: 200px;
+  padding: 10px 30px;
+  justify-self: center;
+  white-space: nowrap;
+}
+
+h2 {
+  color: #1864ab;
+}
+
+a {
+  color: #464646;
+}
+
+.btn {
+  position: fixed;
+  background-color: #1864ab;
+  margin: 20px 0 0 20px;
+  z-index: 100;
+}
+
+.developerTitle {
+  position: fixed;
+  margin-left: 430px;
+  margin-top: 280px;
+  font-family: serif;
+  color: #4dabf7;
+  text-shadow: 2px 2px 2px #fff;
+  z-index: 100;
+}

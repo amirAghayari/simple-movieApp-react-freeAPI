@@ -1,0 +1,160 @@
+.container {
+  position: relative;
+  width: 1200px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slideContent {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 90%;
+}
+
+.poster {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.details {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.plot {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.actors,
+.year,
+.rating {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.activeDot {
+  background-color: #ff4d4d;
+}
+.controlContainer {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bannerControl {
+  bottom: 20px;
+  right: 20px;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+}
+
+.controlLeft,
+.controlRight {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background-color: white;
+} */
+
+/* .posterImg {
+  width: 500px;
+  height: 500px;
+} */
+
+.loader {
+  text-align: center;
+
+  color: white;
+  white-space: nowrap;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 4.8rem;
+}
+
+.error {
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  font-size: 2rem;
+  padding: 4.8rem;
+}

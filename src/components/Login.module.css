@@ -1,0 +1,121 @@
+.container {
+  background: linear-gradient(200deg, #2c3e50, #bdc3c7);
+
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 40px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.Img {
+  width: 400px;
+  height: 600px;
+  border: none;
+  border-radius: 25px;
+}
+
+.loginDiv {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 52px;
+  color: #252525;
+  font-family: sans-serif;
+}
+
+.label {
+  font-size: 20px;
+  font-family: serif;
+  color: #fff;
+}
+
+.input {
+  background-color: #b3b3b3;
+  color: #252525;
+  padding: 8px;
+  width: 200px;
+  border-radius: 6px;
+  border: none;
+}
+
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.insideFormDiv {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.btn {
+  width: 135px;
+  border: none;
+}
+
+.btnGrad {
+  background-image: linear-gradient(
+    to right,
+    #1a2980 0%,
+    #26d0ce 51%,
+    #1a2980 100%
+  );
+}
+.btnGrad {
+  position: relative;
+  right: 70px;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+.btnGrad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btnSign {
+  background-image: linear-gradient(
+    to right,
+    #abbaab 0%,
+    #ffffff 51%,
+    #abbaab 100%
+  );
+}
+.btnSign {
+  position: relative;
+  top: -72px;
+  text-wrap: nowrap;
+  right: -75px;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #2c3e50;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+.btnSign:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #243b51;
+  text-decoration: none;
+}

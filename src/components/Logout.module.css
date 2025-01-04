@@ -1,0 +1,18 @@
+.logoutButton {
+  position: fixed; /* ثابت کردن دکمه */
+  bottom: 20px; /* فاصله از پایین */
+  right: 20px; /* فاصله از راست */
+  padding: 10px 20px;
+  background-color: #ff4d4d; /* رنگ قرمز */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* مطمئن شوید دکمه بالای سایر عناصر است */
+}
+
+.logoutButton:hover {
+  background-color: #ff1a1a; /* رنگ قرمز تیره‌تر هنگام hover */
+}
