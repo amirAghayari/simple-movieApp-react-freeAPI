@@ -1,14 +1,16 @@
 import styles from "./Navbar.module.css";
 import Button from "./Button";
 import Modal from "./Modal";
-import { useState } from "react";
-// import SearchBar from "./SearchBar";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import MovieContext from "../context/MovieContext";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+
 function NavForm() {
   const [shoeModal, setShowModal] = useState(false);
   const { query, setQuery } = useContext(MovieContext);
+  const { isAuthenticated } = useAuth();
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim() !== "") {
@@ -23,13 +25,15 @@ function NavForm() {
 
   return (
     <div className={styles.navLeft}>
-      <Button>
-        <Link to="/login" className={styles.loginLink}>
-          Login/Sign In{" "}
-        </Link>
-      </Button>
+      {!isAuthenticated && (
+        <Button>
+          <Link to="/login" className={styles.loginLink}>
+            Login/Sign In{" "}
+          </Link>
+        </Button>
+      )}
       <div className={styles.navSearchContainer}>
-        <form>
+        <form className={styles.navForm}>
           <div className={styles.searchContainer}>
             <input
               type="text"

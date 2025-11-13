@@ -1,37 +1,44 @@
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Hiro from "./components/Hiro";
-import Navbar from "./components/Navbar";
 import { MovieProvider } from "./context/MovieContext";
 import Login from "./components/Login";
 import ContactUs from "./components/ContactUs";
+import Favorites from "./components/Favorites";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Logout from "./components/Logout";
+import Layout from "./components/Layout";
+
 function App() {
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
-  const location = useLocation();
   return (
     <MovieProvider>
-      {isAuthenticated && location.pathname !== "/login" && <Logout />}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route
           path="/"
           element={
-            isAuthenticated ? (
-              <div>
-                <Navbar />
+            <ProtectedRoute>
+              <Layout>
                 <Hiro />
-              </div>
-            ) : (
-              <Navigate to="/login" replace />
-            )
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Favorites />
+              </Layout>
+            </ProtectedRoute>
           }
         />
         <Route
           path="/contact"
           element={
             <ProtectedRoute>
-              <ContactUs />
+              <Layout>
+                <ContactUs />
+              </Layout>
             </ProtectedRoute>
           }
         />

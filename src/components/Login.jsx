@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import MovieContext from "../context/MovieContext";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const item = [
   "breaking bad",
@@ -18,15 +19,16 @@ const item = [
 ];
 
 function randomIndex(arr) {
-  const index = Math.floor(Math.random() * 10) + 1;
-  console.log(index);
+  const index = Math.floor(Math.random() * arr.length);
   return arr[index];
 }
+
 function Login() {
-  const { movie, setMovie, setQuery } = useContext(MovieContext);
+  const { movie, setQuery } = useContext(MovieContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const correctUser = "amirAghayari";
   const correctPassword = "amir2119";
@@ -34,64 +36,55 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username === correctUser && password === correctPassword) {
-      localStorage.setItem("isAuthenticated", "true");
+      login();
       navigate("/");
     } else {
       alert("Invalid Username or Password");
     }
-    // Implement your login logic here
-    console.log("Username:", username);
-    console.log("Password:", password);
   };
 
-  useEffect(
-    function () {
-      setQuery(randomIndex(item));
-      console.log(movie);
-    },
-    [setQuery]
-  );
+  useEffect(() => {
+    setQuery(randomIndex(item));
+  }, [setQuery]);
+
+  const posterSrc = Array.isArray(movie) ? movie[0]?.Poster : movie?.Poster;
 
   return (
     <div className={styles.container}>
       <div className={styles.loginImgDiv}>
-        <img src={movie.Poster} className={styles.Img} />
+        {posterSrc && <img src={posterSrc} className={styles.Img} />}
       </div>
       <div className={styles.loginDiv}>
         <h1 className={styles.title}>Login</h1>
         <form onSubmit={handleSubmit} className={styles.formDiv}>
           <div className={styles.insideFormDiv}>
-            <label className={styles.label} htmlFor="username">
-              Username:
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Enter your username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </label>
+            <label className={styles.label} htmlFor="username">Username</label>
+            <input
+              className={styles.input}
+              id="username"
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
           </div>
           <div className={styles.insideFormDiv}>
-            <label className={styles.label} htmlFor="password">
-              Password:
-              <input
-                className={styles.input}
-                type="password"
-                placeholder="Your Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </label>
+            <label className={styles.label} htmlFor="password">Password</label>
+            <input
+              className={styles.input}
+              id="password"
+              type="password"
+              placeholder="Your Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
           <button className={`${styles.btn} ${styles.btnGrad}`} type="submit">
             Login
           </button>
         </form>
-        <button className={`${styles.btn} ${styles.btnSign}`} type="submit">
-          Sign In
-        </button>
       </div>
     </div>
   );

@@ -1,18 +1,35 @@
 .logoutButton {
-  position: fixed; /* ثابت کردن دکمه */
-  bottom: 20px; /* فاصله از پایین */
-  right: 20px; /* فاصله از راست */
-  padding: 10px 20px;
-  background-color: #ff4d4d; /* رنگ قرمز */
-  color: white;
-  border: none;
-  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 6px 12px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  z-index: 1000; /* مطمئن شوید دکمه بالای سایر عناصر است */
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .logoutButton:hover {
-  background-color: #ff1a1a; /* رنگ قرمز تیره‌تر هنگام hover */
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.logoutButton:active {
+  transform: translateY(0);
+}
+
+/* در موبایل داخل اکشن‌های ناوبار باید جمع‌وجور باشد */
+@media (max-width: 480px) {
+  .logoutButton {
+    height: 32px;
+    padding: 4px 10px;
+    font-size: var(--font-size-xs);
+  }
 }

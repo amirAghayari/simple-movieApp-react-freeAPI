@@ -1,121 +1,90 @@
 .container {
-  background: linear-gradient(200deg, #2c3e50, #bdc3c7);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: stretch;
+  padding: var(--space-6);
+}
 
-  height: 600px;
+.loginImgDiv {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  gap: 40px;
-  border-radius: 25px;
-  overflow: hidden;
 }
+
 .Img {
-  width: 400px;
-  height: 600px;
-  border: none;
-  border-radius: 25px;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
 }
 
 .loginDiv {
-  width: 400px;
+  max-width: 420px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: var(--space-4);
 }
 
 .title {
-  font-size: 52px;
-  color: #252525;
-  font-family: sans-serif;
-}
-
-.label {
-  font-size: 20px;
-  font-family: serif;
-  color: #fff;
-}
-
-.input {
-  background-color: #b3b3b3;
-  color: #252525;
-  padding: 8px;
-  width: 200px;
-  border-radius: 6px;
-  border: none;
+  font-size: 2rem;
+  color: var(--color-text);
 }
 
 .formDiv {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-3);
 }
+
 .insideFormDiv {
   display: flex;
-  gap: 6px;
-  align-items: center;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.input {
+  background-color: #1d1d24;
+  color: var(--color-text);
+  padding: 10px 12px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+.input:focus {
+  outline: 2px solid rgba(255,77,77,0.5);
+  border-color: var(--color-primary);
 }
 
 .btn {
-  width: 135px;
+  width: 100%;
   border: none;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  cursor: pointer;
 }
 
 .btnGrad {
-  background-image: linear-gradient(
-    to right,
-    #1a2980 0%,
-    #26d0ce 51%,
-    #1a2980 100%
-  );
-}
-.btnGrad {
-  position: relative;
-  right: 70px;
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-700));
+  color: #fff;
+  box-shadow: var(--shadow-sm);
 }
 .btnGrad:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+  transform: translateY(-1px);
 }
 
-.btnSign {
-  background-image: linear-gradient(
-    to right,
-    #abbaab 0%,
-    #ffffff 51%,
-    #abbaab 100%
-  );
-}
-.btnSign {
-  position: relative;
-  top: -72px;
-  text-wrap: nowrap;
-  right: -75px;
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: #2c3e50;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-}
-.btnSign:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #243b51;
-  text-decoration: none;
+/* Responsive */
+@media (max-width: 1024px) {
+  .container { grid-template-columns: 1fr; }
+  .loginImgDiv { display: none; }
 }

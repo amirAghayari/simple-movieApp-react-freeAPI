@@ -1,17 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Logout.module.css";
+import { useAuth } from "../context/AuthContext";
 
 function Logout() {
   const navigate = useNavigate();
+  const { logout, isAuthenticated } = useAuth();
+
+  if (!isAuthenticated) return null;
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
+    logout();
     navigate("/login");
   };
 
   return (
-    <button className={styles.logoutButton} onClick={handleLogout}>
-      Log out
+    <button
+      type="button"
+      className={styles.logoutButton}
+      onClick={handleLogout}
+      aria-label="خروج از حساب"
+    >
+      خروج
     </button>
   );
 }

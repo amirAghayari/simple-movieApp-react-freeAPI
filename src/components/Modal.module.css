@@ -11,67 +11,78 @@
 }
 
 .modalContent {
-  background: #333;
-  color: rgb(48, 48, 48);
+  background: #1f1f1f;
+  color: #eaeaea;
   padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-  height: 500px;
-  overflow: scroll;
+  border-radius: 12px;
+  width: 520px;
+  height: 560px;
+  overflow-y: auto;
   overflow-x: hidden;
-
-  text-align: center;
+  text-align: left;
   position: relative;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
 
 .closeButton {
   margin-top: 15px;
-  background-color: gray;
+  background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .listItem {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: center;
-  border-bottom: #ff5733 dashed 1.2px;
-  box-shadow: 0 2px 2px #4b4b4b;
-  transition: all 0.2s;
-  color: #c3c3c3;
-  border-radius: 5px;
+  border-bottom: 1px dashed rgba(255,87,51,0.4);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  color: #eaeaea;
+  border-radius: 8px;
   overflow: hidden;
+  padding: 8px;
 }
 .listItem:hover {
-  transform: scale(1.04);
+  transform: translateY(-1px);
+  background-color: rgba(255,255,255,0.02);
 }
 
 .titleModal {
-  color: white;
+  color: #ffffff;
   margin-top: 10px;
+  font-weight: 600;
 }
 
 .ulModal {
   list-style: none;
-  padding: 0;
+  padding: 0 0 12px;
+  margin: 0;
 }
 
 .picModal {
-  width: 100px;
-  height: 140px;
+  width: 96px;
+  height: 136px;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 .closeBtn {
-  margin-right: 350px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
   border: none;
-  border-radius: 5px;
-  transition: all 0.3s;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: transparent;
+  color: #eaeaea;
 }
 
 .closeBtn:hover {
-  color: #c3c3c3;
-  border: solid 1.2px #ff5733;
+  color: #ffffff;
+  border: 1px solid #ff6b6b;
   transform: translateY(-2px);
 }

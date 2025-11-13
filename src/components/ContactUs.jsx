@@ -5,11 +5,9 @@ function ContactUs() {
 
   const handleBack = () => {
     if (window.history.length > 1) {
-      console.log("hi");
       navigate(-1);
     } else {
       navigate("/");
-      console.log("by");
     }
   };
 
@@ -25,12 +23,12 @@ function ContactUs() {
           <h1 className={styles.lastName}>Aghayari</h1>
         </div>
         <img
-          src="../../public/34.jpg"
+          src="/34.jpg"
           alt="a developer "
           className={styles.firstImg}
         />
         <img
-          src="../../public/helloworld.jpg"
+          src="/helloworld.jpg"
           alt="a developer "
           className={styles.secondaryImg}
         />
