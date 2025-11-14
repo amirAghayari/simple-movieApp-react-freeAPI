@@ -4,19 +4,19 @@
   justify-content: center;
   gap: 8px;
   height: 36px;
-  padding: 6px 12px;
-  background: var(--color-surface);
+  padding: 1rem 1.5rem;
+  background: var(--color-primary);
   color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-sm);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease, color 0.2s ease;
 }
 
 .logoutButton:hover {
-  border-color: var(--color-primary);
+  border-color: var(--color-text);
   box-shadow: var(--shadow-sm);
   transform: translateY(-1px);
 }
@@ -25,7 +25,6 @@
   transform: translateY(0);
 }
 
-/* در موبایل داخل اکشن‌های ناوبار باید جمع‌وجور باشد */
 @media (max-width: 480px) {
   .logoutButton {
     height: 32px;

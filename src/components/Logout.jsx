@@ -18,9 +18,9 @@ function Logout() {
       type="button"
       className={styles.logoutButton}
       onClick={handleLogout}
-      aria-label="خروج از حساب"
+      aria-label="Log-out"
     >
-      خروج
+      Log out
     </button>
   );
 }

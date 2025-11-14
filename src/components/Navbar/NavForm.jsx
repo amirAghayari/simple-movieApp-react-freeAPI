@@ -1,10 +1,10 @@
 import styles from "./Navbar.module.css";
-import Button from "./Button";
-import Modal from "./Modal";
+import Button from "../Button";
+import Modal from "../Modal";
 import { useState, useContext } from "react";
-import MovieContext from "../context/MovieContext";
+import MovieContext from "../../context/MovieContext";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 function NavForm() {
   const [shoeModal, setShowModal] = useState(false);

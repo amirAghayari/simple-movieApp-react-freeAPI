@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar/Navbar.module.css";
 function FilmsItem() {
   const [isOpen, setIsOpen] = useState(false);
 

@@ -23,11 +23,14 @@ export const MovieProvider = ({ children }) => {
         setError("");
 
         const res = await fetch(
-          `https://www.omdbapi.com/?apikey=${KEY}&s=${encodeURIComponent(query)}`,
+          `https://www.omdbapi.com/?apikey=${KEY}&s=${encodeURIComponent(
+            query
+          )}`,
           { signal: controller.signal }
         );
 
-        if (!res.ok) throw new Error("Something went wrong with fetching movies");
+        if (!res.ok)
+          throw new Error("Something went wrong with fetching movies");
 
         const data = await res.json();
         if (data.Response === "False") throw new Error("Movie not found");
